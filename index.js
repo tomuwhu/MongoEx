@@ -2,9 +2,12 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express')
 const app = express()
 const port = 3000
+app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    run().then(v => res.send(v)).catch(console.error)
+    run().then(v => {
+        res.render('index', { v })
+    }).catch(console.error)
 })
 
 app.listen(port, () => {
