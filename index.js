@@ -18,9 +18,9 @@ const client = new MongoClient(uri, {serverApi: {version: ServerApiVersion.v1}})
 async function run() {
     try {
         await client.connect()
-        const database = client.db("sob")
-        const sob = database.collection("users")
-        const answ = await sob.find({name:"Jane Doe"}).toArray()
+        const database = client.db("sample_mflix")
+        const sob = database.collection("movies")
+        const answ = await sob.find({year: 1968}).toArray()
         return answ  
     } finally {
         await client.close()

@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
     <% v.forEach(x => {%>
-        <%= x.name %>
+        <h1><%= x.title %> (<%= x.year %>)</h1>
         <br>
-        <%= x.email %>
+        <img src='<%= x.poster %>'>
         <br>
-        <%= x.age %>
-    <% }) %> 
+        <hr>
+    <% }) %>
 </body>
 </html>
