@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    background-color: bisque;
+}
+h1 {
+    font-size: 20px;
+    color: rgb(11, 61, 61);
+}
+img {
+    border-radius: 10px;
+    width: 400px;
+    border: solid 4px black;
+    box-shadow: 1px 1px 4px rgb(59, 4, 4);
+}
+.c {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.f {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(202, 221, 221);
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px inset black;
+}
+a {
+    font-weight: normal;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: normal;
+    text-decoration: underline;
+}

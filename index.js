@@ -1,6 +1,7 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express')
 const app = express()
+app.use(express.static('public'))
 const port = 3000
 app.set('view engine', 'ejs')
 
@@ -28,7 +29,7 @@ async function run(year) {
         await client.connect()
         const database = client.db("sample_mflix")
         const sob = database.collection("movies")
-        const answ = await sob.find({year}).toArray()
+        const answ = await sob.find({year}).sort({"title": 1}).toArray()
         return answ  
     } finally {
         await client.close()
