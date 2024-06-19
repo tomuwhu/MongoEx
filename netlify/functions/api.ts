@@ -36,4 +36,3 @@ async function run(year) {
         await client.close()
     }
 }
-
