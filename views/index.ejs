@@ -7,20 +7,41 @@
     <style>
         body {
             text-align: center;
+            background-color: bisque;
         }
         h1 {
             font-size: 20px;
-            color: gray;
+            color: rgb(11, 61, 61);
+        }
+        img {
+            border-radius: 10px;
+            width: 400px;
+            border: solid 4px black;
+            box-shadow: 1px 1px 4px rgb(59, 4, 4);
+        }
+        .c {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .f {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(202, 221, 221);
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px inset black;
         }
     </style>
 </head>
 <body>
+    <h1><a href="/<%= year - 1 %>"><%= year - 1 %></a> | Movies from <%= year %> | <a href="/<%= 1 + Number(year) %>"><%= 1 + Number(year) %></a></h1>
+    <div class="c">
     <% v.forEach(x => {%>
+        <div class="f">
         <h1><%= x.title %> (<%= x.year %>)</h1>
-        <br>
         <img src='<%= x.poster %>'>
-        <br>
-        <hr>
+        </div>
     <% }) %>
+    </div>
+
 </body>
 </html>
